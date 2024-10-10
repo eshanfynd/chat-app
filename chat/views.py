@@ -6,8 +6,8 @@ websocket_mapping = {}
 
 
 async def chat(mobile_no: int, websocket: WebSocket):
-    await websockets.accept()
-    user_sockets = websockets_mapping.get(mobile_no, [])
+    await websocket.accept()
+    user_sockets = websocket_mapping.get(mobile_no, [])
     user_sockets.append(websocket)
     websocket_mapping.update({
         mobile_no: user_sockets
